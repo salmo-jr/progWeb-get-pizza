@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
+import ProductCard from '../../components/productCard';
 
 interface IProduct {
     Title: string;
@@ -27,7 +28,7 @@ const Products = () => {
             <ul>
                 {products.map(p => {
                     return(
-                        <li>{p.Title}</li>
+                        <li><ProductCard data={p} /></li>
                     );
                 })}
             </ul>
