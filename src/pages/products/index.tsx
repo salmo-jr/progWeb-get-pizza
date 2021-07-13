@@ -9,7 +9,7 @@ interface IProduct {
     Poster: string;
 }
 
-const Produtos = () => {
+const Products = () => {
     const [products, setProducts] = useState<IProduct[]>([]);
 
     const loadingProducts = async () => {
@@ -35,4 +35,4 @@ const Produtos = () => {
     );
 }
 
-export default Produtos;
+export default Products;

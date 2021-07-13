@@ -1,9 +1,9 @@
 import Home from './pages/home';
-import Produtos from './pages/produtos';
+import Products from './pages/products';
 
 const App = () => {
   return (
-    <Produtos />
+    <Products />
   );
 }
 
