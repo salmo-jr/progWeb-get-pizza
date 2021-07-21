@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ProductCard from '../../components/ProductCard';
 import api from '../../services/api';
 
 interface IProduct {
@@ -27,7 +28,15 @@ const Products = () => {
             <ul>
                 {products.map(p => {
                     return(
-                        <li>{p.Title}</li>
+                        <li>
+                            <ProductCard
+                                Title={p.Title}
+                                Year={p.Year}
+                                imdbID={p.imdbID}
+                                Type={p.Type}
+                                Poster={p.Poster}
+                            />
+                        </li>
                     );
                 })}
             </ul>
