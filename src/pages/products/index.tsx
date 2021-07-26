@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard';
 import api from '../../services/api';
+import './styles.css';
 
 interface IProduct {
     Title: string;

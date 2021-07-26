@@ -16,12 +16,12 @@ const ProductCard = ({
     imdbID
 }: IProduct) => {
     return (
-        <div className="product-card">
-            <img src={Poster} alt={Title} />
-            <div>
-                <h1>{Title}</h1>
-                <h2>{Year} [{imdbID}]</h2>
-                <h3>{Type}</h3>
+        <div className="card" style={{width: 300}}>
+            <img className="card-img-top" src={Poster} alt={Title} />
+            <div className="card-body">
+                <h1 className="card-title">{Title}</h1>
+                <h2 className="card-text">{Year} [{imdbID}]</h2>
+                <h3 className="card-text">{Type}</h3>
             </div>
         </div>
     );
