@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import GlobalMenu from "../../components/globalMenu";
 
 const Tests = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -9,6 +10,7 @@ const Tests = () => {
 
     return (
         <>
+            <GlobalMenu />
             <h1>Tests</h1>
             <h2>
                 Modal Bootstrap

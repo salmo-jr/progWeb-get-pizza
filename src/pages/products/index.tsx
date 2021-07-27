@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import ProductCard from '../../components/productCard';
+import GlobalMenu from "../../components/globalMenu";
 
 interface IProduct {
     Title: string;
@@ -24,6 +25,7 @@ const Products = () => {
 
     return(
         <>
+            <GlobalMenu />
             <h1>Produtos</h1>
             <ul>
                 {products.map(p => {
