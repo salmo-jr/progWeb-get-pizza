@@ -40,33 +40,3 @@
         width: 25vw;
     }
 }
-/* .product-card {
-    width: 25vw;
-    background-color: #888;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: thin solid #555;
-    font-size: 0.7em;
-    display: flex;
-}
-
-.product-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    object-fit: cover;
-}
-
-.product-card-data {
-    margin-left: 15px;
-    display: flex;
-    flex: 0.7;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.product-card-data h1,
-.product-card-data h2,
-.product-card-data h3 {
-    margin: 0;
-} */
