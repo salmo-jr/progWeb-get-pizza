@@ -5,6 +5,7 @@ const GlobalMenu = () => {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/products">Produtos</Link>
+            <Link to="/registerProducts">Cadastro de Produtos</Link>
             <Link to="/tests">Testes</Link>
         </nav>
     );
