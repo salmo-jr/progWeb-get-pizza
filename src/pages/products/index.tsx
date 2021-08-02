@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import GlobalMenu from '../../components/GlobalMenu';
 import ProductCard from '../../components/ProductCard';
 import api from '../../services/api';
 import './styles.css';
@@ -25,6 +26,7 @@ const Products = () => {
 
     return(
         <>
+            <GlobalMenu />
             <h1>Produtos</h1>
             <ul>
                 {products.map(p => {
