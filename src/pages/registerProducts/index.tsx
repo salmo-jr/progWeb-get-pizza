@@ -78,12 +78,14 @@ const RegisterProducts = () => {
                         <label htmlFor="technology">Tecnologia</label>
                     </fieldset>
                     <label htmlFor="uf">UF</label>
-                    <Select id="uf" style={{width: 120}}>
-                        <Option value="es">ES</Option>
-                        <Option value="mg">MG</Option>
-                        <Option value="rj">RJ</Option>
-                        <Option value="sp">SP</Option>
-                    </Select>
+                    <div>
+                        <Select id="uf" style={{width: 120}}>
+                            <Option value="es">ES</Option>
+                            <Option value="mg">MG</Option>
+                            <Option value="rj">RJ</Option>
+                            <Option value="sp">SP</Option>
+                        </Select>
+                    </div>
 
                     <button type="submit" disabled={isSubmitting}>
                         Submit
