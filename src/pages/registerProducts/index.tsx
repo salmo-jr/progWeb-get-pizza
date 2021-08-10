@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Select } from 'antd';
-import GlobalMenu from '../../components/globalMenu';
+import SimplePageTemplate from '../../components/simplePageTemplate';
 
 interface IError {
     email?: string;
@@ -27,8 +27,7 @@ const RegisterProducts = () => {
     const { Option } = Select;
 
     return(
-        <>
-            <GlobalMenu />
+        <SimplePageTemplate>
             <h1>Formulário de cadastro de produtos</h1>
             <Formik
                 initialValues={initialValues}
@@ -93,7 +92,7 @@ const RegisterProducts = () => {
                 </Form>
             )}
             </Formik>
-        </>
+        </SimplePageTemplate>
     );
 }
 

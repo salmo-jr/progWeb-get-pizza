@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import ProductCard from '../../components/productCard';
-import GlobalMenu from "../../components/globalMenu";
+import SimplePageTemplate from "../../components/simplePageTemplate";
 
 interface IProduct {
     Title: string;
@@ -24,8 +24,7 @@ const Products = () => {
     }, []);
 
     return(
-        <>
-            <GlobalMenu />
+        <SimplePageTemplate>
             <h1>Produtos</h1>
             <ul>
                 {products.map(p => {
@@ -34,7 +33,7 @@ const Products = () => {
                     );
                 })}
             </ul>
-        </>
+        </SimplePageTemplate>
     );
 }
 

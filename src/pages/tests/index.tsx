@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import GlobalMenu from "../../components/globalMenu";
+import SimplePageTemplate from "../../components/simplePageTemplate";
 
 const Tests = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -9,8 +9,7 @@ const Tests = () => {
     const handleModalShow = () => setModalShow(true);
 
     return (
-        <>
-            <GlobalMenu />
+        <SimplePageTemplate>
             <h1>Tests</h1>
             <h2>
                 Modal Bootstrap
@@ -58,7 +57,7 @@ const Tests = () => {
                     <Button onClick={handleModalClose}>Close</Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </SimplePageTemplate>
     );
 }
 

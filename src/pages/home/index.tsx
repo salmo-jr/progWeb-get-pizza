@@ -1,11 +1,10 @@
-import GlobalMenu from "../../components/globalMenu";
+import SimplePageTemplate from "../../components/simplePageTemplate";
 
 const Home = () => {
     return(
-        <>
-            <GlobalMenu />
+        <SimplePageTemplate>
             <h1>Home</h1>
-        </>
+        </SimplePageTemplate>
     );
 }
 

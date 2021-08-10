@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import { TextField, CheckboxWithLabel, RadioGroup, Select } from 'formik-material-ui';
 import * as Yup from 'yup';
-import GlobalMenu from '../../components/globalMenu';
+import SimplePageTemplate from '../../components/simplePageTemplate';
 
 interface Values {
     email: string;
@@ -25,8 +25,7 @@ interface Values {
 const RegisterProductsMaterial = () => {
 
     return (
-        <>
-            <GlobalMenu />
+        <SimplePageTemplate>
             <h1>Formulário de cadastro de produtos</h1>
             <Formik
                 initialValues={{
@@ -66,6 +65,7 @@ const RegisterProductsMaterial = () => {
                                 name="idade"
                                 type="number"
                                 label="Idade"
+                                helperText="aqui"
                             />
                         </div>
                         <div>
@@ -89,10 +89,11 @@ const RegisterProductsMaterial = () => {
                                 component={CheckboxWithLabel}
                                 type="checkbox"
                                 name="termo"
+                                error={true}
                                 required
                                 Label={{ label: 'Termos' }}
                             />
-                            {errors.termo && touched.termo ? errors.termo : null}
+                            <ErrorMessage name='termo' />
                         </div>
                         <Field component={RadioGroup} name="activity">
                             <FormControlLabel
@@ -137,8 +138,11 @@ const RegisterProductsMaterial = () => {
                     </Form>
                 )}
             </Formik>
-        </>
+        </SimplePageTemplate>
     );
 }
 
 export default RegisterProductsMaterial;
+
+// https://stackworx.github.io/formik-material-ui/docs/guide/getting-started
+// https://material-ui.com/components/checkboxes/
