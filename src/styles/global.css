@@ -7,6 +7,12 @@ body {
     background-color: #ccc;
 }
 
+.errorMessage {
+    color: red;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 @media screen and (min-width: 992px) {
     #root {
         width: 80%;
