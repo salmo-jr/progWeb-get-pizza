@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import {
     Button,
@@ -10,9 +10,12 @@ import {
     MenuItem,
     Checkbox,
 } from '@material-ui/core';
+import { DropzoneArea } from 'material-ui-dropzone';
+import path from 'path';
 import { TextField, CheckboxWithLabel, RadioGroup, Select } from 'formik-material-ui';
 import * as Yup from 'yup';
 import SimplePageTemplate from '../../components/simplePageTemplate';
+import api from '../../services/api';
 
 interface Values {
     email: string;
@@ -23,6 +26,25 @@ interface Values {
 }
 
 const RegisterProductsMaterial = () => {
+    const [file, setFile] = useState<File>();
+    const updateAvatar = useCallback(async (id: number, imageUri) => {
+        try {
+            const body = new FormData()
+            // Above format is needed by api
+      
+            body.append('anexo', imageUri)
+      
+            const headers = {
+              'content-type': 'multipart/form-data',
+              accept: 'application/json'
+            }
+            await api.post(`/api/upload-image/item/${id}`, body, {
+                headers,
+            });
+        } catch (error) {
+          console.log(error);
+        }
+    }, []);
 
     return (
         <SimplePageTemplate>
@@ -55,6 +77,7 @@ const RegisterProductsMaterial = () => {
                         setSubmitting(false);
                         alert(JSON.stringify(values, null, 2));
                     }, 500);
+                    updateAvatar(1, file);
                 }}
             >
                 {({ errors, status, touched, submitForm, isSubmitting }) => (
@@ -83,6 +106,16 @@ const RegisterProductsMaterial = () => {
                                 label="Password"
                                 name="password"
                             />
+                        </div>
+                        <div>
+                        <DropzoneArea
+                            dropzoneText="Arraste um arquivo ou clique para adicionar"
+                            // Icon={PublishIcon}
+                            acceptedFiles={['image/*']}
+                            filesLimit={1}
+                            onChange={(files) => setFile(files[0])}
+                            maxFileSize={50000000}
+                        />
                         </div>
                         <div>
                             <Field
